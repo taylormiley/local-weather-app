@@ -5,7 +5,7 @@ define(function(require){
   return function(url, cityName) {
     var deferred = Q.defer();
     $.ajax({
-            url: url + cityName + ",us",
+            url: url + cityName + ",us&units=imperial",
             method: "GET"
           }).done(function(data){
             deferred.resolve(data);
