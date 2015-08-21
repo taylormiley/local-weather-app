@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>TEMPLATE</title>
-	<link rel="stylesheet" type="text/css" href="styles/normalize.css">
+  <meta charset="utf-8">
+  <title>Local Weather App</title>
+  <link rel="stylesheet" type="text/css" href="styles/normalize.css">
   <link rel="stylesheet" href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-	<div id="main-wrapper">
-	</div>
+  <div id="main-wrapper">
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <h1>Get Your Local Weather!</h1>
+        <!-- <div class="col-lg-6"> -->
+        <div class="input-group">
+          <input id="userZip" type="text" class="form-control" placeholder="Zip Code..." pattern="[\d]{5}(-[\d]{4})">
+          <span class="input-group-btn">
+            <button id="zipSubmit" class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+      </div> 
+    </div>
+  </div>
 
 
   <script data-main="javascripts/main" 
-  				src="lib/bower_components/requirejs/require.js"></script>
+          src="lib/bower_components/requirejs/require.js"></script>
 </body>
 </html>
