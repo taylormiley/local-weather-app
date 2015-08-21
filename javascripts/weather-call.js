@@ -1,13 +1,14 @@
 define(function(require){
-  var $ = require('jquery');
+  var $ = require('jquery'),
+      Q = require('q');
   
   return function(cityName) {
     var deferred = Q.defer();
     $.ajax({
-            url: "api.openweathermap.org/data/2.5/weather?q=" + cityName,
+            url: "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + ",us",
             method: "GET"
           }).done(function(data){
-            deffered.resolve(data);
+            deferred.resolve(data);
             console.log("data", data);
           }).fail(function(xhr, status, error) {
             deferred.reject(error);

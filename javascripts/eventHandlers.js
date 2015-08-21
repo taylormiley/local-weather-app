@@ -1,6 +1,7 @@
 define(function(require){
   var $ = require("jquery"),
-      userZip = require("userZip");
+      userZip = require("userZip"),
+      currentWeather = require("weather-call");
 
   // get user zip input
   $("#zipSubmit").click(function(){
@@ -11,5 +12,7 @@ define(function(require){
       userZip();
     }
   });
+  
+  
 
 });
