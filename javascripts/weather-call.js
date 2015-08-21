@@ -2,10 +2,10 @@ define(function(require){
   var $ = require('jquery'),
       Q = require('q');
   
-  return function(cityName) {
+  return function(url, cityName) {
     var deferred = Q.defer();
     $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + ",us",
+            url: url + cityName + ",us",
             method: "GET"
           }).done(function(data){
             deferred.resolve(data);
