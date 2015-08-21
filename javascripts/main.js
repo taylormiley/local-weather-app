@@ -33,12 +33,12 @@ requirejs(["dependencies", "authentication"],
         } else {
           console.log("Authenticated successfully with payload:", authData);
           auth.setUid(authData.uid);
-          // require(["main-logic"], function() {});
+          require(["eventHandlers"], function() {});
         }
       });
     } else {
       auth.setUid(authData.uid);
-      // require(["main-logic"], function() {});
+      require(["eventHandlers"], function() {});
     }
 
 
