@@ -1,15 +1,15 @@
 <div>
   <h3>3 Day Forecast</h3>
   {{#each list}}
-    <div>{{dt}}</div>
-    <div>{{main.temp}}</div>
+    <h3>{{dt}}</h3>
+    <div>{{main.temp}}°F</div>
     {{#each weather}}
-    <h1>{{main}}</h1>
+    <h4>{{main}}</h4>
     <div>{{description}}</div>
     {{/each}}
     <div>
-      <span>{{main.pressure}}</span>
-      <span>{{wind.speed}}</span>
+      <span><b>Pressure:</b>{{pressure}}hPa</span>
+      <span><b>Wind:</b>{{speed}}mph</span>
     </div>
   {{/each}}
 </div>
