@@ -17,8 +17,32 @@ requirejs.config({
 });
 
 //dependencies are global dependencies
-requirejs(["dependencies"], 
-  function(dependencies) {
+requirejs(["dependencies", "authentication"], 
+  function(dependencies, auth) {
+    
+    /////// user authentication
+    //detect if user is already logged in
+    var ref = new Firebase("https://local-weather.firebaseio.com");
+    var authData = ref.getAuth();
+    console.log("authData: ", authData);
+    //if no login, authenticate with Github OAuth
+    if(authData === null) {
+      ref.authWithOAuthPopup("github", function(error, authData) { //1.firebase sends request for request token to github with client id and secret id
+        if (error) {
+          console.log("Login Failed!", error);
+        } else {
+          console.log("Authenticated successfully with payload:", authData);
+          auth.setUid(authData.uid);
+          // require(["main-logic"], function() {});
+        }
+      });
+    } else {
+      auth.setUid(authData.uid);
+      // require(["main-logic"], function() {});
+    }
+
+
+
     
   } //end require function
 );//end require 
