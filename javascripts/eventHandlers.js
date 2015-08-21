@@ -1,58 +1,23 @@
 define(function(require){
   var $ = require("jquery"),
-      userZip = require("userZip"),
-      zipCall = require("zip-call"),
-      currentWeather = require("weather-call"),
-      templates = require("get-templates"),
-      city;
+      apiCalls = require("api-promise-chain");
 
-  
-  
-
-  // get user zip input
   $("#zipSubmit").click(function(){
-    city = userZip();
-    var zip = zipCall(city);
-    zip.then(function(data){
-      console.log("data", data);
-      currentWeather("http://api.openweathermap.org/data/2.5/weather?q=", data + "&units=imperial").then(function(data){
-        console.log("currentWeatherdata", data);
-        $("#currentWeather").html(templates.template(data));
-      });
-    }).fail(function(data){
-      console.log("data", data);
-    }).done();
+    apiCalls.getCurrentWeather();
   });
+
   $("#userZip").keydown(function(e) {
     if(e.which === 13) {
-      userZip();
+      apiCalls.getCurrentWeather();
     }
   });
 
   $("body").on("click", "#3DayButton", function(){
-    var zip = zipCall(city);
-    zip.then(function(data){
-      console.log("data", data);
-      currentWeather("http://api.openweathermap.org/data/2.5/forecast/daily?q=" ,data + "&cnt=3").then(function(data){
-        console.log("currentWeatherdata", data);
-        $("#forecast").html(templates.threeDayTemplate(data));
-      });
-    }).fail(function(data){
-      console.log("data", data);
-    }).done();
+    apiCalls.get3DayWeather();
   });
   
   $("body").on("click", "#7DayButton", function(){
-    var zip = zipCall(city);
-    zip.then(function(data){
-      console.log("data", data);
-      currentWeather("http://api.openweathermap.org/data/2.5/forecast/daily?q=" ,data + "&cnt=7").then(function(data){
-        console.log("currentWeatherdata", data);
-        $("#forecast").html(templates.sevenDayTemplate(data));
-      });
-    }).fail(function(data){
-      console.log("data", data);
-    }).done();
+    apiCalls.get7DayWeather();
   });
   
 
