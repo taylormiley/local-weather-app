@@ -2,14 +2,14 @@ define(function(require){
   var $ = require("jquery"),
       Q = require("q");
   return function(zipCall) { 
-      
+      var deferred = Q.defer();
+    
       $.ajax({
             url: "http://api.zippopotam.us/us/" + zipCall,
             method: "GET"
           }).done(function(data) {
-            deferred.resolve(data);
+            deferred.resolve(data.places[0]["place name"]);
             console.log("data", data);
-            return data.places["place name"];
           }).fail(function(xhr, status, error) {
             deferred.reject(error);
           });
