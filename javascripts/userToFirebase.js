@@ -1,6 +1,7 @@
 define(function(require){
   var $ = require("jquery");
   var firebase = require("firebase");
+  var auth = require("authentication");
   
   var ref = new Firebase("https://local-weather.firebaseio.com/");
   
@@ -20,10 +21,13 @@ define(function(require){
       status: $status,
       status_description: $statusDescription,
       pressure: $pressure,
-      windSpeed: $windSpeed
+      windSpeed: $windSpeed,
+      userID: auth.getUid()
     };
     
     ref.child("forecast").push(firebaseObj);
+    
+    $(this).remove();
   });
   
 });
