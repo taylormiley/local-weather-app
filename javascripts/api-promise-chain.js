@@ -4,6 +4,7 @@ define(function(require){
       zipCall = require("zip-call"),
       currentWeather = require("weather-call"),
       templates = require("get-templates"),
+      dateConvert = require("epoch-convert"),
       city;
 
   return {
@@ -26,6 +27,7 @@ define(function(require){
         console.log("data", data);
         currentWeather("http://api.openweathermap.org/data/2.5/forecast/daily?cnt=3&q=" ,data).then(function(data){
           console.log("currentWeatherdata", data);
+          dateConvert(data);
           $("#forecast").html(templates.threeDayTemplate(data));
         });
       }).fail(function(data){
@@ -38,6 +40,7 @@ define(function(require){
         console.log("data", data);
         currentWeather("http://api.openweathermap.org/data/2.5/forecast/daily?q=" ,data + "&cnt=7").then(function(data){
           console.log("currentWeatherdata", data);
+          dateConvert(data);
           $("#forecast").html(templates.sevenDayTemplate(data));
         });
       }).fail(function(data){
