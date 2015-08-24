@@ -20,5 +20,7 @@ define(function(require){
     apiCalls.get7DayWeather();
   });
   
+  $('[data-toggle="tooltip"]').tooltip();
+
 
 });
