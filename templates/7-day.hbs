@@ -1,14 +1,17 @@
-<div>
-  <h3>7 Day Forecast</h3>
+<h2>7 Day Forecast</h2>
   {{#each list}}
-    <div>{{dt}}</div>
-    <div>{{temp.day}}</div>
-    {{#each weather}}
-    <h1>{{main}}</h1>
-    <div>{{description}}</div>{{/each}}
-    <div>
-      <span>{{main.pressure}}</span>
-      <span>{{wind.speed}}</span>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div>{{dt}}</div>
+      <div>{{main.temp}}</div>
+      {{#each weather}}
+      <h1>{{main}}</h1>
+      <div>{{description}}</div>
+      {{/each}}
+      <div>
+        <span>{{main.pressure}}</span>
+        <span>{{wind.speed}}</span>
+      </div>
     </div>
+  </div>
   {{/each}}
-</div>

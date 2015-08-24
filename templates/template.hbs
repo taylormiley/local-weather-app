@@ -1,13 +1,15 @@
-<div>
-  <h3>{{name}}</h3>
-  <div>{{main.temp}}</div>
-  {{#each weather}}
-  <h1>{{main}}</h1>
-  <div>{{description}}</div>{{/each}}
-  <div>
-    <span>{{main.pressure}}</span>
-    <span>{{wind.speed}}</span>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Today's Forecast in {{name}}</h1>
+    <div>Temperature: {{main.temp}}</div>
+    {{#each weather}}
+    <h3>Conditions: {{main}}</h3>
+    <div>{{description}}</div>{{/each}}
+    <div>
+      <span>Pressure: {{main.pressure}}</span>
+      <span>Wind Speed: {{wind.speed}}</span>
+    </div>
+    <button type="button" id="3DayButton" class="btn btn-primary">3 Day Forecast</button>
+    <button type="button" id="7DayButton" class="btn btn-primary">7 Day Forecast</button>
   </div>
-  <button type="button" id="3DayButton">3 Day Forecast</button>
-  <button type="button" id="7DayButton">7 Day Forecast</button>
-</div>
+</div

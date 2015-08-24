@@ -1,15 +1,32 @@
-<div>
-  <h3>3 Day Forecast</h3>
+<h2>3 Day Forecast</h2>
   {{#each list}}
-    <div>{{dt}}</div>
-    <div>{{main.temp}}</div>
-    {{#each weather}}
-    <h1>{{main}}</h1>
-    <div>{{description}}</div>
-    {{/each}}
-    <div>
-      <span>{{main.pressure}}</span>
-      <span>{{wind.speed}}</span>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div>{{dt}}</div>
+      <div>{{main.temp}}</div>
+      {{#each weather}}
+      <h1>{{main}}</h1>
+      <div>{{description}}</div>
+      {{/each}}
+      <div>
+        <span>{{main.pressure}}</span>
+        <span>{{wind.speed}}</span>
+      </div>
     </div>
+  </div>
   {{/each}}
-</div>
+
+
+{{!-- 
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div> --}}
