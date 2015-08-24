@@ -1,8 +1,8 @@
 <div>
   <h3>3 Day Forecast</h3>
   {{#each list}}
-    <h3>{{dt}}</h3>
-    <div>{{main.temp}}°F</div>
+    <h3 class="date">{{dt}}</h3>
+    <div>{{temp.day}}°F</div>
     {{#each weather}}
     <h4>{{main}}</h4>
     <div>{{description}}</div>
@@ -11,5 +11,6 @@
       <span><b>Pressure:</b>{{pressure}}hPa</span>
       <span><b>Wind:</b>{{speed}}mph</span>
     </div>
+    <button type="button" class="save">Save Day</button>
   {{/each}}
 </div>
