@@ -2,15 +2,16 @@
   {{#each list}}
   <div class="sevenDayDiv col-sm-6 col-md-4">
     <div class="thumbnail">
-      <div><a href="#"><span class="glyphicon glyphicon-floppy-disk" data-toggle="tooltip" data-placement="left" title="Save Forecast"></span></a>{{dt}}</div>
-      <div>{{main.temp}}</div>
+      <div><a href="#"><span class="glyphicon glyphicon-floppy-disk" data-toggle="tooltip" data-placement="left" title="Save Forecast"></span></a><span class="date">{{dt}}</span></div>
+      <div class="main-temp">{{temp.day}}</div>
       {{#each weather}}
-      <h1>{{main}}</h1>
-      <div>{{description}}</div>
+      <img src="http://openweathermap.org/img/w/{{icon}}.png">
+      <h1 class="status">{{main}}</h1>
+      <div class="status-description">{{description}}</div>
       {{/each}}
       <div>
-        <span>{{main.pressure}}</span>
-        <span>{{wind.speed}}</span>
+        <span class="pressure">Pressure: {{pressure}}</span>
+        <span class="wind-speed">Wind speed: {{speed}}</span>
       </div>
     </div>
   </div>

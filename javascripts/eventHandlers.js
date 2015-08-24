@@ -1,6 +1,7 @@
 define(function(require){
   var $ = require("jquery"),
-      apiCalls = require("api-promise-chain");
+      apiCalls = require("api-promise-chain"),
+      saveToFirebase = require("userToFirebase");
 
   $("#zipSubmit").click(function(){
     apiCalls.getCurrentWeather();
