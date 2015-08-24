@@ -3,6 +3,7 @@
     <h1>Today's Forecast in {{name}}</h1>
     <div>Temperature: {{main.temp}}</div>
     {{#each weather}}
+    <img src="http://openweathermap.org/img/w/{{icon}}.png">
     <h3>Conditions: {{main}}</h3>
     <div>{{description}}</div>{{/each}}
     <div>
