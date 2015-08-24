@@ -3,10 +3,23 @@
 <head>
   <meta charset="utf-8">
   <title>Local Weather App</title>
+  <meta property="og:url"           content="https://local-weather.firebaseapp.com/" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Local-Weather" />
+    <meta property="og:description"   content="current forecast" />
+    <meta property="og:image"         content="https://local-weather.firebaseapp.com/" />
   <link rel="stylesheet" type="text/css" href="styles/normalize.css">
   <link rel="stylesheet" href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
   <div id="main-wrapper">
     <div class="container-fluid">
       <div class="jumbotron">
@@ -23,6 +36,8 @@
   </div>
   <div id="currentWeather"></div>
   <div id="forecast"></div>
+  <br>
+  <div class="fb-share-button"></div>
 
   <script data-main="javascripts/main" 
           src="lib/bower_components/requirejs/require.js"></script>
