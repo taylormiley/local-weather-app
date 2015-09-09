@@ -1,5 +1,5 @@
 #NSS Group Project:  Local Weather App
-An NSS group project with contributions from @tannert44, @rob1nburt0n, and @taylormiley.  This web app takes a user's zip code and gives the current weather conditions.  The user can also get the 3 day and week long forecast.
+An NSS group project with contributions from @tannert44, @rob1nburt0n, and @brendanpierson.  This web app takes a user's zip code and gives the current weather conditions.  The user can also get the 3 day and week long forecast.
 
 ###Technologies used:
 1. RequireJS
@@ -16,7 +16,7 @@ An NSS group project with contributions from @tannert44, @rob1nburt0n, and @tayl
 2. [Bower](http://bower.io/)
 
 ###Installation Instructions
-1. ```git clone https://github.com/BrendonPierson/local-weather-app.git && cd local-weather-app/lib```
+1. ```git clone https://github.com/taylormiley/local-weather-app.git && cd local-weather-app/lib```
 2. ```npm install``` May take a few minutes to download all dependencies, also runs bower install.
 3. ```npm start``` This fires up the web server 
 
